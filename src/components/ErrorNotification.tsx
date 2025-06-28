@@ -18,7 +18,7 @@ export const ErrorNotification: React.FC<Props> = ({
     }, 3000);
 
     return () => clearTimeout(timer);
-  }, [errorMessage]);
+  }, [errorMessage, onClose]);
 
   return (
     <div
@@ -36,15 +36,6 @@ export const ErrorNotification: React.FC<Props> = ({
       {/* show only one message at a time */}
       {errorMessage}
       <br />
-      {/* Unable to load todos
-      <br />
-      Title should not be empty
-      <br />
-      Unable to add a todo
-      <br />
-      Unable to delete a todo
-      <br />
-      Unable to update a todo */}
     </div>
   );
 };

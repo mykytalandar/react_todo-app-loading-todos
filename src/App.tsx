@@ -8,6 +8,7 @@ import { TodoList } from './components/TodoList';
 import { TodoFooter } from './components/TodoFooter';
 import { ErrorNotification } from './components/ErrorNotification';
 import { Todo } from './types/Todo';
+import { ErrorType } from './types/ErrorType';
 
 function getFilteredTodos(
   currentTodos: Todo[],
@@ -33,7 +34,7 @@ function getFilteredTodos(
 export const App: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState<ErrorType | ''>('');
   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
 
   useEffect(() => {
